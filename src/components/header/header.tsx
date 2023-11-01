@@ -36,12 +36,12 @@ const Header = () => {
                   Home
                 </a>
               </a>
-              <a href="/products">
+              <a href="/">
                 <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0">
                   Shop
                 </a>
               </a>
-              <a href="/about">
+              <a href="/">
                 <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0">
                   About
                 </a>
@@ -56,12 +56,12 @@ const Header = () => {
                 Home
               </a>
             </a>
-            <a href="/products">
+            <a href="/">
               <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0">
                 Shop
               </a>
             </a>
-            <a href="/about">
+            <a href="/">
               <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0">
                 About
               </a>

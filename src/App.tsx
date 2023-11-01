@@ -87,7 +87,7 @@ function Layout() {
       />
       <Header />
       <main className="my-8 container mx-auto px-6">
-        <h3 className="text-gray-700 text-5xl font-bold mb-8">Clothes</h3>
+        <h3 className="text-gray-700 text-5xl font-bold mb-8">Toys Features</h3>
         <div className="flex justify-between mt-10 flex-col-reverse sm:flex-row">
           <Categories
             All={All}
