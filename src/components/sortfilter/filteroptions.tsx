@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { price, category } from "./sortandfilter";
 
-const SortFilterItems = ({ handleFilter }: { handleFilter: () => void }) => {
+const SortFilterItems = ({
+  handleFilter,
+}: {
+  handleFilter: (stringArray: string[], singleString: string) => void;
+}) => {
   const productsSize = price;
   const productsCategory = category;
 
-  const [checkedItems, setCheckedItems] = useState([]);
+  const [checkedItems, setCheckedItems] = useState([] as string[]);
   const [checkedPrice, setCheckedPrice] = useState("");
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

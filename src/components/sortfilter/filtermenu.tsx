@@ -8,7 +8,7 @@ const SortAndFilter = ({
 }: {
   filterBtn: boolean;
   handleState: React.Dispatch<React.SetStateAction<boolean>>;
-  handleFilter: () => void;
+  handleFilter: (stringArray: string[], singleString: string) => void;
 }) => {
   const styles = {
     bmBurgerButton: {

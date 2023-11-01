@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Categories from "./components/categories/categories";
@@ -8,11 +8,30 @@ import { products } from "./utils/products";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ProductList from "./components/product/product";
-function Layout({ children }: { children: React.ReactNode }) {
-  const [isMenuOpen, handleMenu] = useState(false);
-  const [productdb, setProducts] = useState([]);
+import Loading from "./components/loading/loading";
 
-  const [filterdb, setFilterdb] = useState([]);
+interface Product {
+  category: string;
+  _id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  description: string;
+  image: string;
+  rating: number;
+  seller: string;
+  sub_category: string;
+  featuers: string[];
+  tag: string;
+}
+
+function Layout() {
+  const [isMenuOpen, handleMenu] = useState(false);
+  const [productdb, setProducts] = useState<Product[]>([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const [filterdb, setFilterdb] = useState<Product[]>([]);
 
   useEffect(() => {
     Aos.init();
@@ -20,12 +39,11 @@ function Layout({ children }: { children: React.ReactNode }) {
       const data = await products();
       setFilterdb(data);
       setProducts(data);
+      setLoading(false);
     })();
   }, []);
 
   const handleFilter = (checkedItems: string[], checkedPrice: string) => {
-    console.log(checkedItems, checkedPrice);
-    console.log(productdb);
     const filterProducts =
       checkedItems.length > 0
         ? productdb.filter((product) => checkedItems.includes(product.category))
@@ -80,8 +98,7 @@ function Layout({ children }: { children: React.ReactNode }) {
           />
           <SortFilter filterBtn={isMenuOpen} handleState={handleMenu} />
         </div>
-        {children}
-        <ProductList product={filterdb} />
+        {loading ? <Loading /> : <ProductList product={filterdb} />}
       </main>
       <Footer />
     </div>

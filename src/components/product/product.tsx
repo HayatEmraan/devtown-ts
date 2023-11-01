@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactStars from "react-rating-stars-component";
 
 interface Product {
@@ -10,6 +10,7 @@ interface Product {
   image: string;
   rating: number;
   seller: string;
+  category: string;
   sub_category: string;
   featuers: string[];
   tag: string;
@@ -40,6 +41,7 @@ const ProductList = ({ product }: { product: Product[] }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
         {currentItems.map(
           (item: {
+            description: string;
             _id: string;
             name: string;
             image: string;

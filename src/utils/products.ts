@@ -7,6 +7,7 @@ interface Product {
   image: string;
   rating: number;
   seller: string;
+  category: string;
   sub_category: string;
   featuers: string[];
   tag: string;
