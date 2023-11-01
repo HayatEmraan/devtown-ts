@@ -4,9 +4,11 @@ import SortFilterItems from "./filteroptions";
 const SortAndFilter = ({
   filterBtn,
   handleState,
+  handleFilter,
 }: {
   filterBtn: boolean;
   handleState: React.Dispatch<React.SetStateAction<boolean>>;
+  handleFilter: () => void;
 }) => {
   const styles = {
     bmBurgerButton: {
@@ -68,7 +70,7 @@ const SortAndFilter = ({
         isOpen={filterBtn}
         onStateChange={handleStateChange}
       >
-        <SortFilterItems />
+        <SortFilterItems handleFilter={handleFilter} />
       </Menu>
     </div>
   );

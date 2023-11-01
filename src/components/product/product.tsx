@@ -1,10 +1,44 @@
+import React, { useState } from "react";
 import ReactStars from "react-rating-stars-component";
 
-const ProductList = ({ product }: { product: any }) => {
+interface Product {
+  _id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  description: string;
+  image: string;
+  rating: number;
+  seller: string;
+  sub_category: string;
+  featuers: string[];
+  tag: string;
+}
+
+const ProductList = ({ product }: { product: Product[] }) => {
+  const itemsPerPage = 8;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const [currentItem, setCurrentItem] = useState(8);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = product.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (pageNumber: number) => {
+    window.scrollTo(0, 0);
+    setCurrentItem(
+      pageNumber * itemsPerPage > product.length
+        ? product.length
+        : pageNumber * itemsPerPage
+    );
+    setCurrentPage(pageNumber);
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
-      {product &&
-        product.map(
+    <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
+        {currentItems.map(
           (item: {
             _id: string;
             name: string;
@@ -34,6 +68,9 @@ const ProductList = ({ product }: { product: any }) => {
                       {item?.rating}
                     </span>
                   </div>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {item?.description.slice(0, 60) + "..."}
+                  </p>
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-bold text-gray-900 dark:text-white">
                       ${item?.price}
@@ -50,6 +87,32 @@ const ProductList = ({ product }: { product: any }) => {
             );
           }
         )}
+      </div>
+      <div className="mt-6 pb-12">
+        <div className="flex justify-between items-center">
+          <h1 className="text-xl font-semibold">
+            {currentItem} results of {product.length}
+          </h1>
+          <ul className="flex justify-center">
+            {Array(Math.ceil(product.length / itemsPerPage))
+              .fill(null)
+              .map((_, index) => (
+                <li key={index} className="mr-2">
+                  <button
+                    onClick={() => handlePageChange(index + 1)}
+                    className={`${
+                      currentPage === index + 1
+                        ? "bg-blue-700 text-white"
+                        : "bg-white text-blue-700"
+                    } hover:bg-blue-800 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
+                  >
+                    {index + 1}
+                  </button>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

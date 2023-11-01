@@ -1,47 +1,47 @@
 const Categories = ({
-  summer,
-  autumn,
-  pants,
-  top,
-  newly,
+  All,
+  Robot,
+  Car,
+  Disney,
+  Marvel,
 }: {
-  summer: () => void;
-  autumn: () => void;
-  pants: () => void;
-  top: () => void;
-  newly: () => void;
+  All: () => void;
+  Robot: () => void;
+  Car: () => void;
+  Disney: () => void;
+  Marvel: () => void;
 }) => {
   return (
     <div className="flex flex-row overflow-auto whitespace-nowrap mt-4 sm:mt-0">
       <button
         className="border font-mono p-2 text-xs border-black focus:bg-lime-300"
-        onClick={summer}
+        onClick={All}
       >
-        Colorful Summer
+        All
       </button>
       <button
         className="ml-4 border font-mono p-2 text-xs border-black focus:bg-lime-300"
-        onClick={autumn}
+        onClick={Disney}
       >
-        Autumn
+        Disney
       </button>
       <button
         className="ml-4 border font-mono p-2 text-xs border-black focus:bg-lime-300"
-        onClick={pants}
+        onClick={Robot}
       >
-        Pants
+        Robot
       </button>
       <button
         className="ml-4 border font-mono p-2 text-xs border-black focus:bg-lime-300"
-        onClick={top}
+        onClick={Car}
       >
-        Tops
+        Car
       </button>
       <button
         className="ml-4 border font-mono p-2 text-xs border-black focus:bg-lime-300"
-        onClick={newly}
+        onClick={Marvel}
       >
-        Newly Arrival
+        Marvel
       </button>
     </div>
   );
