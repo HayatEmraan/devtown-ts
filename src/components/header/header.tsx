@@ -7,10 +7,12 @@ const Header = () => {
     <header>
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <a href="/">
-            <div className="w-full text-red-700 md:text-left text-2xl font-semibold">
-              devTown
-            </div>
+          <a
+            href="/"
+            className={`flex-none text-gray-600 dark:text-gray-400 text-2xl font-bold  bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent`}
+            aria-label="Brand"
+          >
+            KiddoCraze
           </a>
           <div className="flex items-center justify-end w-full lg:w-2/5 lg:justify-around">
             <div className="flex sm:hidden">

@@ -13,12 +13,12 @@ const Footer = () => {
                     className={`flex-none text-gray-600 dark:text-gray-400 text-2xl font-bold  bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent`}
                     aria-label="Brand"
                   >
-                    devTown
+                    KiddoCraze
                   </a>
                 </p>
                 <p className="text-body-color text-gray-700 dark:text-gray-400 mb-7 text-base">
-                  Stay informed about devTown with our latest releases and founder
-                  news.
+                  Stay informed about KiddoCraze with our latest releases and
+                  founder news.
                 </p>
                 <p className="text-dark flex items-center text-sm font-medium">
                   <span className="text-primary mr-3">
@@ -222,7 +222,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <p className="text-body-color text-gray-600 dark:text-gray-400 text-base">
-                  © 2023 - devTown, Inc
+                  © 2023 - KiddoCraze, Inc
                 </p>
               </div>
             </div>

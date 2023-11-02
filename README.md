@@ -1,10 +1,10 @@
 # React + TypeScript + Vite
 
-# Devtown - Your Toy Shopping Destination
+# KiddoCraze - Your Toy Shopping Destination
 
-Devtown is a web application designed to help users explore and purchase toys conveniently. The website features a homepage displaying a variety of toy logos and provides the option to filter toys by price and category. It also incorporates a pagination feature to enhance the user experience.
+KiddoCraze is a web application designed to help users explore and purchase toys conveniently. The website features a homepage displaying a variety of toy logos and provides the option to filter toys by price and category. It also incorporates a pagination feature to enhance the user experience.
 
-![Devtown Homepage](/gitassets/homepage.png)
+![KiddoCraze Homepage](/gitassets/homepage.png)
 
 ## Features
 
@@ -24,26 +24,30 @@ Before you begin, make sure you have the following software installed on your ma
 ## Installation
 
 1. Clone this repository to your local machine:
+
    ```bash
-   git clone https://github.com/HayatEmraan/devtown-ts
+   git clone https://github.com/HayatEmraan/KiddoCraze-ts
+
+   ```
 
 2. Navigate to the project directory:
-    ```bash
-    npm install
-    # or
-    yarn
-    ```
+
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
 
 3. First, run the development server:
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    # or
-    pnpm dev
-    # or
-    bun dev
-    ```
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
 
 ## Usage
 
@@ -51,19 +55,22 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Screenshots
 
-Here are some screenshots from the Devtown website:
+Here are some screenshots from the KiddoCraze website:
 
 - **Homepage**
-![Homepage](/gitassets/homepage.png)
+  ![Homepage](/gitassets/homepage.png)
 
-- **Filtering by Price or Category**
-![Filtering by Price](/gitassets/filtering.png)
+- **Filtering by Price**
+  ![Filtering by Price](/gitassets/price.png)
+
+- **Filtering by Category**
+  ![Filtering by Category](/gitassets/category.png)
 
 - **Pagination**
-![Pagination](/gitassets/pagination.png)
+  ![Pagination](/gitassets/pagination.png)
 
 ---
 
-Thank you for checking out Devtown! We hope you enjoy your toy shopping experience. If you have any questions or feedback, please feel free to reach out.
+Thank you for checking out KiddoCraze! We hope you enjoy your toy shopping experience. If you have any questions or feedback, please feel free to reach out.
 
 Happy Coding!

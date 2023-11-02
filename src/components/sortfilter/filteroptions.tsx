@@ -65,7 +65,7 @@ const SortFilterItems = ({
       </div>
       <div>
         <button
-          className="border font-mono p-2 w-4/5 bg-lime-300 border-black shadow-offset-black"
+          className="border font-mono p-2 w-4/5 hover:bg-yellow-700 bg-yellow-600 text-white border-black  shadow-offset-black"
           onClick={submitHandler}
         >
           <span className="text-sm">APPLY</span>
